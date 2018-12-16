@@ -4,8 +4,7 @@ song_name = 'Swaye shree Ram prabhu aikati'
 artist = 'Sudhir Phadake'
 gener = 'bhakti-geet'
 yr_published = "1965"
-composed_by = 'G. D. Madgulkar'
-no_of_copies = 100000
+composed_by,no_of_copies = 'G. D. Madgulkar', 100000
 
 print('My favorite song is: ',song_name)
 print('Name of the singer is:',artist)
