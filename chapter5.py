@@ -1,25 +1,21 @@
 ''' This is assignment 5 to test basic of loops '''
  
 
-for num in range(1,10):
+for num in range(1,101):
                 prime = False
                 if num%3 == 0 and num%5 == 0:
-                                print('FizzBuzz')
-                                print(num)
+                    print('FizzBuzz')
                 elif num%5 == 0:
-                                print('Buzz')
-                                print(num)
+                    print('Buzz')
                 elif num%3 == 0:
-                                print('Fizz')
-                                print(num)
+                    print('Fizz')
                 elif num>1:
-                                for i in range(2,num):
-                                                if num%i == 0:
-                                                                print('Prime flag is ',prime)
-                                                                print(num)
-                                                                break
-                                                elif (num%i != 0) and (num%num == 0):
-                                                                prime = True
-                                if prime == True:
-                                                print(num)
-                                                print(num,' is Prime')
+                    for i in range(2,num):
+                        if num%i == 0:
+                            prime = False
+                            break
+                        else:
+                            prime = True
+                    if prime:
+                        print(num,' is Prime')
+                    
