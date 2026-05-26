@@ -10,8 +10,8 @@
 | Phase | Topic | Status |
 |---|---|---|
 | 1 | Variables, Data Types, Functions, *args/**kwargs | COMPLETE |
-| 2 | OOP — Classes, Inheritance, @property | IN PROGRESS (final fix pending) |
-| 3 | Decorators, Generators, Lambda, Regex, Multithreading | Not started |
+| 2 | OOP — Classes, Inheritance, @property | COMPLETE |
+| 3 | Decorators, Generators, Lambda, Regex, Multithreading | IN PROGRESS |
 | 4 | Testing — pytest, mocking, coverage | Not started |
 | 5 | Flask deeper + REST API patterns | Not started |
 | 6 | Databases — psycopg2 deeper, SQLAlchemy | Not started |
@@ -20,5 +20,16 @@
 | 9 | NumPy, Pandas, Matplotlib | Not started |
 | 10 | Data Science + ML | Not started |
 
+## Phase 3 detail (IN PROGRESS)
+
+| Topic | Status |
+|---|---|
+| Decorators (`log_call`, `retry` factory) | COMPLETE |
+| Generators (`log_stream`, `paginate`) | COMPLETE |
+| Lambda & comprehensions | In progress |
+| Regex | Not started |
+| Multithreading | Not started |
+
 ## Session notes
 - [2026-05-25](Claude-output/session-2026-05-25.md) — Phase 1 complete, Phase 2 OOP in progress
+- [2026-05-26](Claude-output/session-2026-05-26.md) — Phase 2 complete, Phase 3 decorators + generators complete

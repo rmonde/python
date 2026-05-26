@@ -11,8 +11,8 @@ A structured, hands-on Python learning path — built around real exercises, cod
 | Phase | Topics | Status |
 |---|---|---|
 | 1 | Variables, Data Types, Functions, `*args` / `**kwargs` | Complete |
-| 2 | OOP — Classes, Inheritance, `@property` | In Progress |
-| 3 | Decorators, Generators, Lambda, Regex, Multithreading | Upcoming |
+| 2 | OOP — Classes, Inheritance, `@property` | Complete |
+| 3 | Decorators, Generators, Lambda, Regex, Multithreading | In Progress |
 | 4 | Testing — pytest, mocking, coverage | Upcoming |
 | 5 | Flask deeper + REST API patterns | Upcoming |
 | 6 | Databases — psycopg2, SQLAlchemy ORM | Upcoming |
@@ -91,6 +91,27 @@ A structured, hands-on Python learning path — built around real exercises, cod
 | `temperature_converter.py` | Early exercise |
 | `sample_python_tests.py` | Early test exploration |
 | `test_program.py` | Early test exploration |
+
+---
+
+## Phase 3 — Advanced Python `phase3_decorators.py` `phase3_generators.py`
+
+### Decorators
+- Basic decorator — `log_call` wraps a function with pre/post logging
+- `wrapper(*args, **kwargs)` — transparent to any function signature; always `return result`
+- Decorator factory — `retry(max_attempts)` accepts arguments via 3-level nesting: `retry` → `decorator` → `wrapper`
+- `raise last_error` — re-raises original exception type after all retries exhausted
+
+### Generators
+- `yield` — pauses execution, returns one value at a time, resumes where it left off
+- `log_stream` — lazy filter over log lines, yields only `ERROR` entries
+- `paginate` — chunks a list using `range(0, len, step)` + slice; handles uneven last chunk automatically
+- Memory stays constant regardless of input size — no intermediate list built
+
+### Key lessons
+- `@decorator` is syntactic sugar for `func = decorator(func)` — it's just a function call
+- Calling a generator function returns a generator object; code runs only when iterated
+- Decorator factories add one more wrapper layer to accept arguments
 
 ---
 
