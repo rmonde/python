@@ -54,7 +54,7 @@ class DatabaseServer(Server):
 
     def describe(self) -> str:
         """Return a description of the database server."""
-        return f"{super().describe()} | DB: {self.db_type}"  # Call the parent class's describe method
+        return f"{super().describe()} | DB: {self.db_type}"
     
     def backup(self):
         """Perform a backup of the database server."""
