@@ -108,10 +108,25 @@ A structured, hands-on Python learning path — built around real exercises, cod
 - `paginate` — chunks a list using `range(0, len, step)` + slice; handles uneven last chunk automatically
 - Memory stays constant regardless of input size — no intermediate list built
 
+### Lambda & Comprehensions `phase3_lambda.py`
+- `filter()` + lambda — returns filter object; wrap in `list()` to use as list
+- `sorted()` + lambda with `key=` and `reverse=True`
+- Dict comprehension — `{s["name"]: s["replicas"] for s in services}`
+- List comprehension with condition — `[s["name"] for s in services if condition]`
+- Rule: use lambda where a callable is required (`key=`, `filter()`); use comprehensions for building collections
+
+### Regex `phase3_regex.py`
+- `re.findall()` — all matches as list; `re.search()` — first match anywhere + `.group()`
+- Timestamp pattern: `r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}"`
+- IP pattern: `r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"`
+- Nested comprehension to flatten per-line results: `[ip for log in logs for ip in re.findall(...)]`
+- Use `"text" in string` for literal checks; reserve `re` for actual patterns
+
 ### Key lessons
 - `@decorator` is syntactic sugar for `func = decorator(func)` — it's just a function call
-- Calling a generator function returns a generator object; code runs only when iterated
+- Calling a generator returns a generator object; code only runs when iterated
 - Decorator factories add one more wrapper layer to accept arguments
+- Comprehensions are idiomatic Python; `map()`/`filter()` are functional-style alternatives
 
 ---
 
