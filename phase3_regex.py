@@ -2,17 +2,14 @@ import re
 
 def extract_timestamps(logs: list[str]) -> list[str]:
     timestamp_pattern = r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}"
-    timestamps = []
-    return [re.search(timestamp_pattern, log).group() for log in logs if re.search(timestamp_pattern, log)]
+    return [re.search(timestamp_pattern, log).group() for log in logs]
 
 def extract_errors(logs: list[str]) -> list[str]:
     error_pattern = r"ERROR"
-    errors = []
     return [log for log in logs if "ERROR" in log]
 
 def extract_ips(logs: list[str]) -> list[str]:
     ip_pattern = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
-    ips = []
     return [ip for log in logs for ip in re.findall(ip_pattern, log)]
 
 def main():
