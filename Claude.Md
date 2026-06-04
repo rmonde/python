@@ -29,11 +29,12 @@
 | Lambda & comprehensions | COMPLETE |
 | Regex (`extract_timestamps`, `extract_errors`, `extract_ips`) | COMPLETE |
 | Multithreading basics (threading, join, I/O-bound) | COMPLETE (2026-06-01) |
-| Multithreading — locks & shared state | Next up |
-| Multiprocessing | Not started |
+| Multithreading — locks & shared state | COMPLETE (2026-06-04) |
+| Multiprocessing | Next up |
 | asyncio basics | Not started |
 
 ## Session notes
 - [2026-05-25](Claude-output/session-2026-05-25.md) — Phase 1 complete, Phase 2 OOP in progress
 - [2026-05-26](Claude-output/session-2026-05-26.md) — Phase 2 complete, Phase 3 decorators + generators + lambda + regex complete
 - [2026-06-01](Claude-output/session-2026-06-01.md) — Phase 3 threading basics complete (phase3_threading.py); locks + multiprocessing + asyncio next
+- [2026-06-04](Claude-output/session-2026-06-04.md) — Locks & shared state complete (phase3_locks.py); race condition demonstrated with explicit read/sleep/write pattern; fixed with threading.Lock(); next: multiprocessing
