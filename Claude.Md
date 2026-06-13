@@ -11,7 +11,7 @@
 |---|---|---|
 | 1 | Variables, Data Types, Functions, *args/**kwargs | COMPLETE |
 | 2 | OOP — Classes, Inheritance, @property | COMPLETE |
-| 3 | Decorators, Generators, Lambda, Regex, Multithreading | IN PROGRESS |
+| 3 | Decorators, Generators, Lambda, Regex, Multithreading |  COMPLETE |
 | 4 | Testing — pytest, mocking, coverage | Not started |
 | 5 | Flask deeper + REST API patterns | Not started |
 | 6 | Databases — psycopg2 deeper, SQLAlchemy | Not started |
