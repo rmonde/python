@@ -105,25 +105,34 @@ with multiprocessing.Pool(processes=4) as pool:
 
 ---
 
-## asyncio (Next Session)
+## asyncio
 
-**Use when:** Many I/O-bound tasks where you want maximum concurrency without the overhead of threads or processes.
+**Use when:** Many I/O-bound tasks where you want maximum concurrency without the overhead of threads or processes. The threshold is ~1,000+ concurrent tasks — beyond that, threads become impractical (each thread ~1–8MB RAM; each coroutine ~few KB).
 
 **Mental model:** One chef who never stands idle. Starts pasta (task A), while pasta boils picks up chopping (task B), while chopping finishes checks the sauce (task C). Never doing two things simultaneously, but never idle.
 
-**Key keywords (preview):**
+**Key syntax:**
 ```python
 import asyncio
 
-async def fetch_data():      # coroutine — a task that can be paused
-    await asyncio.sleep(2)   # pause HERE, let other coroutines run
+async def download_file(name):
+    await asyncio.sleep(2)        # yields to event loop; other coroutines run
     return "done"
 
-asyncio.run(main())          # starts the event loop
-asyncio.gather(t1, t2, t3)  # runs multiple coroutines concurrently
+async def main():
+    tasks = [download_file(f"file_{i}") for i in range(6)]
+    await asyncio.gather(*tasks)  # run all concurrently
+
+asyncio.run(main())               # creates event loop, runs until done
 ```
 
+**asyncio.sleep vs time.sleep:**
+- `await asyncio.sleep(2)` — yields control; event loop runs other coroutines
+- `time.sleep(2)` — blocks the entire thread; nothing else runs for 2 seconds
+
 **The `await` keyword = "I'm waiting — someone else can run now."**
+
+**Proof it works:** 6 files × 2 seconds each = 12 seconds sequential → **2 seconds with asyncio.gather**. All "Starting" lines print before any "Finished" line — every coroutine runs to its `await` before any sleep completes.
 
 **Why it matters for AI/agent work:** Every HTTP call to an LLM API, every tool invocation in an agent loop is I/O-bound. asyncio lets you fire 10 API calls and process whichever responds first — without 10 threads.
 
@@ -177,4 +186,4 @@ Is the task I/O-bound or CPU-bound?
 
 ---
 
-*Last updated: 2026-06-08 | Next: asyncio basics (phase3_asyncio.py)*
+*Last updated: 2026-06-13 | Phase 3 complete*
